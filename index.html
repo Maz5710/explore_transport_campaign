@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'>
+
+    <!-- Jquery UI CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <!-- Bootstraps CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Minified Custom CSS always last-->
+    <link rel="stylesheet" href="css/custom.min.css">
+    <title>Explore Vehicle Rentals</title>
+</head>
+
+<body>
+    <!-- NAVBAR START-->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top " aria-label="navbar ">
+        <div class="container-fluid">
+            <!-- Navbar brand logo start -->
+            <a class="navbar-brand mt-2 ms-2 mt-lg-0" href="index.html"> <img src="img/logo_explore_sm.png"
+                    alt="Explore Logo"> </a>
+            <!-- Navbar menu links start -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+                aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+                <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+                    <!-- Navbar Item #1 start -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#about" data-bs-toggle="dropdown"
+                            aria-expanded="false">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#rentalLocations">Locations</a></li>
+                            <li><a class="dropdown-item" href="#drivingNZ">Driving in New Zealand</a></li>
+                            <li><a class="dropdown-item" href="#sustainabilitySection">Sustainability</a></li>
+                            <li><a class="dropdown-item" href="#">Contact us</a></li>
+                        </ul>
+                    </li>
+                    <!-- Navbar Item #1 end-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Rentals</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cars</a></li>
+                            <li><a class="dropdown-item" href="#">Motorhomes</a></li>
+                            <li><a class="dropdown-item" href="#">Motorbikes</a></li>
+                            <li><a class="dropdown-item" href="#">Get a quote</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Search input field start -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <!-- Search input field end -->
+                <!-- Search button icon start -->
+                <button class="btn " type="submit"><img src="img/icon-search.png" alt="search icon" width="20"
+                        height="20">
+                </button>
+                <!-- Search button icon end -->
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END-->
+
+    <!-- CAROUSEL SLIDE START -->
+    <!-- Container Start -->
+    <div class="container-inner" id="banner"></div>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel Slide Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Slide #1 -->
+            <div class="carousel-item active">
+                <img src="img/banner_1_motorhome.png" class="d-block w-100"
+                    alt="Photo of motorhome over bridge in autumn">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1>EXPLORE SUSTAINABLE TRAVEL</h1>
+                        <p><a class="btn btn-lg rounded-pill" href="#">Get a quote</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide #2 -->
+            <div class="carousel-item">
+                <img src="img/banner_2_car.png" class="d-block w-100" alt="Photo of SUV beside tent">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1>EXPLORE SUSTAINABLE OPTIONS</h1>
+                        <p><a class="btn btn-lg rounded-pill" href="#">View Vehicle Range</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide #3 -->
+            <div class="carousel-item">
+                <img src="img/banner_3_motorbike.jpg" class="d-block w-100"
+                    alt="Photo of Motorbike on rural winding road">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1>EXPLORE SUSTAINABLE RENTAL COMPANIES</h1>
+                        <p><a class="btn btn-lg rounded-pill" href="#">View Rental Companies</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Next and Previous Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Container End-->
+    <!-- CAROUSEL SLIDE END -->
+
+    <!-- SINGLE PAGE APP CONTENT START -->
+    <div class="container-fluid">
+        <!-- Plan Your Journey Section Start -->
+        <div class="container-fluid">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <h2>Plan your journey </h2>
+                <h5>View vehicle options</h5>
+            </div>
+        </div>
+        <!-- Plan Your Journey Section End -->
+
+        <!-- PRODUCT CARD FILTERING START-->
+        <!-- Filtering Strip Start -->
+        <div class="row justify-content-around filter-strip">
+
+            <!-- Vehicle Type Select start -->
+            <div class="col-6 col-3 g-5">
+                <label for="typeSelect">Select Vehicle Type</label>
+                <select class="form-select" id="typeSelect">
+                    <option value="all" selected="selected">Any</option>
+                    <option value="smallCar">Small Car</option>
+                    <option value="largeCar">Large Car</option>
+                    <option value="motorhome">Motorhome</option>
+                    <option value="motorbike">Motorbike</option>
+                </select>
+            </div>
+            <!-- Vehicle Type Select end -->
+
+            <!-- Group Size Select start -->
+            <div class="col-6 col-3 g-5">
+                <label for="groupSizeSelect">Select Group Size</label>
+                <select class="form-select" id="groupSizeSelect">
+                    <option value="all" selected="selected">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <!-- Group Size Select end -->
+
+            <!-- Pick-up Date start -->
+            <div class="col-6 col-3 g-5">
+                <div class="date-select">
+                    <label for="collectDate">Pick-up Date</label>
+                    <input type="date" id="collectDate">
+                </div>
+            </div>
+            <!-- Pick-up Date end -->
+
+            <!-- Drop-off Date start -->
+            <div class="col-6 col-3 g-5">
+                <div class="date-select">
+                    <label for="deliverDate">Drop-off Date</label>
+                    <input type="date" id="deliverDate">
+                </div>
+            </div>
+            <!-- Drop-off Date end -->
+        </div>
+        <!-- Filtering Strip end -->
+
+        <!-- Filter Buttons Start -->
+        <div class="row">
+            <!-- Submit Button -->
+            <div class="col-12 col-md-6 d-flex justify-content-around">
+                <button class="btn rounded-pill" id="filterSubmit">Submit</button>
+            </div>
+            <!-- Clear Button -->
+            <div class="col-12 col-md-6 d-flex justify-content-around">
+                <button class="btn rounded-pill" id="filterClear">Clear</button>
+            </div>
+        </div>
+        <!-- Filter Buttons End -->
+
+        <!-- Vehicle Product Heading Start -->
+        <div class="container-fluid">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="row rental-costs">
+                    <h2>Vehicle Range</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Vehicle Product Heading End-->
+
+        <!-- Product Card Output Container start -->
+        <div class="row row-cols-sm-2 row-cols-md-3 g-3 product-output" id="productOutput"></div>
+        <!-- Product Card Output Container end -->
+
+        <!-- Get A Quote Modal start -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="modalResult">
+                </div>
+            </div>
+        </div>
+        <!-- Get A Quote Modal end -->
+
+        <!-- About Section Start -->
+        <div class="container-fluid" id="about">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2>About </h2>
+                    <p>With so many things to do and spectacular places to see, choosing how you travel
+                        around New Zealand is as important as choosing where you want to go.
+                    </p>
+                    <p>See the sights at your own pace and hire a rental car, motorhome or motorbike to
+                        travel around New Zealand.</p>
+                    <p>Access our incredible country and find everything from untamed wilderness to
+                        rich culture.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/car_tent_suv.jpg" class="d-block w-100" alt="Photo SUV and tent">
+                </div>
+            </div>
+        </div>
+        <!-- About Section End -->
+
+        <!-- Sustainability Section Start -->
+        <div class="container-fluid" id="sustainabilitySection">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2>Sustainability </h2>
+                    <p>Tourism New Zealand's purpose is to enrich New Zealand by maximising the contribution
+                        of domestic and international visitors. </p>
+                    <p>100% Pure New Zealand are members of Tiaki – Care for New Zealand governance group
+                        and in collaboration with Tourism Industry Aotearoa and Sustainable Tourism Members.
+                    </p>
+                    <p>By supporting the New Zealand Tourism Sustainability Commitment, our aim is to
+                        see every New Zealand tourism business committed to sustainability by 2025.</p>
+                    <p>Learn about our partnerships and commitments with:</p>
+                    <p>
+                    </p><a href="https://www.newzealand.com" target="_blank">100% Pure New Zealand</a></p>
+                    </p><a href="https://www.tiakinewzealand.com" target="_blank">Tiaki - Care for New Zealand</a></p>
+
+                    </p><a href="https://www.tia.org.nz" target="_blank">Tourism Industry Aotearoa</a></p>
+
+                    <p>Find out about the <a
+                            href="https://www.tia.org.nz/news-and-updates/industry-news/tourism-industry-challenge-to-cut-carbon/"
+                            target="_blank">Tourism Carbon Challenge</a></p>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/logo_collaborating_partnerspng.png" class="d-block w-100"
+                        alt="100% Pure New Zealand, Tiaki, Tourism Idustry Aotearoa and Committed to Sustainable Toursim logos">
+                </div>
+            </div>
+        </div>
+        <!-- Sustainability Section End -->
+
+        <!-- Driving in New Zealand Section Start -->
+        <div class="container-fluid" id="drivingNZ">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+                <div class="col-md-7 order-md-2">
+                    <h2>Driving in New Zealand </h2>
+                    <p>New Zealand has some of the most increadibly scenic drives and open roads in the
+                        world. Whether you’ve been driving in New Zealand for a year of fifty, it’s always a
+                        good idea to brush up on road safety. </p>
+                    <p>Check you can rent a vehicle in New Zealand by selecting your age group:</p>
+                    <form>
+                        <input type="radio" id="age1" name="age" value="Under 25">
+                        <label for="age1">Under 25</label><br>
+                        <input type="radio" id="age2" name="age" value="25 and over">
+                        <label for="age2">25 and over</label>
+                        <br>
+                        <!-- <input type="submit" value="Submit"> -->
+                        <button class="btn rounded-pill" id="ageCheck">Check Age Limit </button>
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/road.jpg" class="d-block w-100" alt="Photo driving on New Zealand road">
+                </div>
+            </div>
+        </div>
+        <!-- Driving in New Zealand Section End -->
+
+                <!-- Rental Locations Section Start -->
+        <div class="container-fluid" id="rentalLocations">
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="row locations" >
+                    <div class="col-md-7">
+                        <h2>Rental Locations</h2>
+                        <!-- Rental Location mapbox headings and zoom to location links start -->
+                        <h6>Auckland Airport</h6>
+                        <p>Ray Emery Drive, Māngere, Auckland 2022</p>
+                        <button class="btn btn-md rounded-pill" id="aucklandAirport">Zoom to Auckland
+                            Airport</button>
+                        <hr class="featurette-divider col-9">
+                        <h6>Wellington Airport</h6>
+                        <p>Stewart Duff Drive, Rongotai, Wellington 6022</p>
+                        <button class="btn btn-md rounded-pill" id="wellingtonAirport">Zoom to Wellington
+                            Airport</button>
+                        <hr class="featurette-divider col-9">
+                        <h6>Christchurch Airport </h6>
+                        <p>30 Durey Road, Harewood, Christchurch 8053</p>
+                        <button class="btn btn-md rounded-pill" id="christchurchAirport">Zoom to
+                            Christchurch Airport</button>
+                        <hr class="featurette-divider col-9">
+                        <h6>Dunedin Airport</h6>
+                        <p>25 Miller Road, Momona 9073</p>
+                        <button class="btn btn-md rounded-pill" id="dunedinAirport">Zoom to Dunedin
+                            Airport</button>
+                        <hr class="featurette-divider col-9">
+                        <h6>Queenstown Airport</h6>
+                        <p>Sir Henry Wigley Drive, Frankton, Queenstown 9300</p>
+                        <button class="btn btn-md rounded-pill" id="queenstownAirport">Zoom to Queenstown
+                            Airport</button>
+                    </div>
+                    <!-- Rental Location mapbox headings and zoom to location links end -->
+                    <!-- MapBox image start -->
+                    <div class="col-md-5">
+                        <div id="map"></div>
+                    </div>
+                    <!-- MapBox image end -->
+                </div>
+            </div>
+        </div>
+        <!-- Rental Locations Section End -->
+
+        <!-- Section Divider -->
+        <div class="container-fluid">
+            <hr class="featurette-divider">
+        </div>
+        <!-- SINGLE PAGE APP CONTENT End -->
+
+        <!-- FOOTER START -->
+        <!-- Footer container starts-->
+        <div class="footer-container p-3">
+            <footer class="py-5">
+                <!-- Footer row start -->
+                <div class="row">
+                    <!-- Newsletter subscribe start -->
+                    <div class="col-md-5 mb-3">
+                        <form>
+                            <h6>Subscribe to our newsletter</h6>
+                            <p>Get the latest news and specials</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email
+                                    address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-secondary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Newsletter subscribe end -->
+
+                    <!--Footer Section #1 start -->
+                    <div class="col-6 col-md-2 mb-3">
+                        <h6>About</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Locations</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Driving in
+                                    New
+                                    Zealand</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Sustainability</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Contact
+                                    us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Footer Section #1 end -->
+
+                    <!--Footer Section #2 start -->
+                    <div class="col-6 col-md-2 mb-3">
+                        <h6>Rentals</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Cars</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Motorhomes</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Motorbikes</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Get a
+                                    quote</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Footer Section #2 end -->
+                    <!--Footer Section #3 start -->
+                    <div class="col-6 col-md-2 mb-3">
+                        <h6>Extras</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms & Conditions</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Footer Section #3 end -->
+
+                    <!-- Social Media Links start-->
+                    <div class="col-12">
+                        <a class="btn btn-outline-dark btn-floating m-1" href="https://www.facebook.com/purenewzealand"
+                            target="_blank" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-dark btn-floating m-1"
+                            href="hhttps://www.instagram.com/purenewzealand/" target="_blank" role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <!-- Social Media Links end -->
+                    <!-- Footer Copyright start -->
+                    <div class="row">
+                        <small class="copyright">© Explore Vehicle Rentals 2022</small>
+                    </div>
+                    <br>
+                    <br>
+                    <!-- Footer Copyright end -->
+                </div>
+                <!-- Footer row end -->
+            </footer>
+            <!-- FOOTER END -->
+        </div>
+        <!-- Footer container ends-->
+    </div>
+    <!-- Page Container End -->
+    <!--  Single Page App end -->
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c252db7e5f.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+    <!-- Jquery 3.6.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <!-- Mapbox GL -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
